@@ -31,6 +31,9 @@ const providers = {
   },
 };
 
+
+
+  
 export default function SocialButton({ provider, onClick }) {
   const item = providers[provider];
 
@@ -40,10 +43,20 @@ export default function SocialButton({ provider, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center justify-center gap-3 rounded-xl border px-4 py-3 text-sm font-semibold transition focus:outline-none focus:ring-4 focus:ring-emerald-100 ${item.color}`}
+      aria-label={item.label}
+      title={item.label}
+      className={`flex min-w-0 flex-1 items-center justify-center gap-2
+        rounded-xl border px-2 py-3 text-xs font-semibold
+        transition duration-200 hover:-translate-y-0.5
+        focus:outline-none focus:ring-2 focus:ring-emerald-200
+        sm:px-3 sm:text-sm ${item.color}`}
     >
-      {item.icon}
-      {item.label}
+      <span className="shrink-0 [&>svg]:h-5 [&>svg]:w-5">
+        {item.icon}
+      </span>
+
+      <span className="truncate">{item.label}</span>
     </button>
   );
 }
+
