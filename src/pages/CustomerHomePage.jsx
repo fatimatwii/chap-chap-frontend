@@ -148,7 +148,7 @@ export default function CustomerHomePage() {
             </button>
           </div>
 
-          <button onClick={() => notify("Le choix du quartier sera bientôt disponible.")} className="mb-3 flex w-full items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-left sm:hidden">
+          <button onClick={() => notify("")} className="mb-3 flex w-full items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-left sm:hidden">
             <MapPin size={17} className="text-emerald-600" />
             <span className="flex-1"><span className="block text-[10px] text-slate-400">Deliver to</span><span className="block text-sm font-bold">Moanda, Gabon</span></span>
             <ChevronDown size={17} />
