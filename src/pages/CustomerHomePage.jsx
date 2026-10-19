@@ -142,7 +142,7 @@ export default function CustomerHomePage() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">Everything you need, delivered</p>
               </div>
             </div>
-            <button onClick={() => setCartOpen(true)} aria-label="Ouvrir le panier" className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-slate-200 hover:text-emerald-700">
+            <button onClick={() => setCartOpen(true)} aria-label="open the cart" className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-slate-200 hover:text-emerald-700">
               <ShoppingCart size={20} />
               {cartCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-emerald-600 px-1 text-[10px] font-bold text-white">{cartCount}</span>}
             </button>
@@ -268,7 +268,7 @@ in the cart</p>}
       {notice && <div role="status" className="fixed bottom-24 left-1/2 z-[60] flex w-[calc(100%-32px)] max-w-md -translate-x-1/2 items-center gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-medium text-white shadow-xl md:bottom-6"><span className="flex-1">{notice}</span><button onClick={() => setNotice("")} aria-label="Fermer"><X size={16} /></button></div>}
 
       {cartOpen && <div className="fixed inset-0 z-50">
-        <button aria-label="Fermer le panier" onClick={() => setCartOpen(false)} className="absolute inset-0 bg-slate-950/45" />
+        <button aria-label="close the cart" onClick={() => setCartOpen(false)} className="absolute inset-0 bg-slate-950/45" />
         <aside role="dialog" aria-modal="true" aria-label="Your Cart" className="absolute inset-x-0 bottom-0 flex max-h-[88dvh] flex-col rounded-t-3xl bg-white shadow-2xl sm:inset-y-0 sm:left-auto sm:right-0 sm:max-h-none sm:w-full sm:max-w-md sm:rounded-l-3xl">
           <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4"><div><h2 className="text-xl font-black">Your Cart</h2><p className="mt-1 text-xs text-slate-400">{cartCount} item(s)</p></div><button onClick={() => setCartOpen(false)} aria-label="Fermer" className="rounded-xl bg-slate-100 p-2"><X size={19} /></button></div>
           {cartItems.length ? <>
